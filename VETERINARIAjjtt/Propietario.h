@@ -15,6 +15,7 @@ private:
     double telefono;
 
 public:
+    Propietario();
     
 };
 #endif

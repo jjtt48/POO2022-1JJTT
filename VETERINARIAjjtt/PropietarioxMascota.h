@@ -11,7 +11,7 @@ private:
     
 
 public:
-    
+    PropietarioxMascota(Propietario propietario, Mascota mascota);
 };
 
 
