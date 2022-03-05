@@ -19,6 +19,7 @@ private:
     string fechaD;
 
 public:
+    Mascota();
     Mascota(string raza, string tipo, float peso, int edad, string tipoSangre, string nombre, double id, bool status, string fechaD);
     
 };
