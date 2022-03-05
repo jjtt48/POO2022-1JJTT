@@ -12,3 +12,40 @@ Mascota::Mascota(string raza, string tipo, float peso, int edad, string tipoSang
     this-> status = status;
     this-> fechaD = fechaD;
 }
+
+string Mascota::getRaza(){
+    return this -> raza;
+}
+
+string Mascota::getTipo(){
+    return this -> tipo;
+}
+
+float Mascota::getPeso(){
+    return this -> peso;
+}
+
+int Mascota::getEdad(){
+    return this -> edad;
+}
+
+string Mascota::getTipoSangre(){
+    return this -> tipoSangre;
+}
+
+
+string Mascota::getNombre(){
+    return this -> nombre;
+}
+
+double Mascota::getId(){
+    return this -> id;
+}
+
+bool Mascota::getStatus(){
+    return this -> status;
+}
+
+string Mascota::getFechaD(){
+    return this -> fechaD;
+}
