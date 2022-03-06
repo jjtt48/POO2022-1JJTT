@@ -16,6 +16,10 @@ private:
 
 public:
     Propietario();
-    
+    Propietario(string nombre, double id, string email, double telefono);
+    string getNombre();
+    double getId();
+    string getEmail();
+    double getTelefono();
 };
 #endif
