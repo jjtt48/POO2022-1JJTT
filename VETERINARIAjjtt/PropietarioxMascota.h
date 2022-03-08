@@ -11,7 +11,10 @@ private:
     
 
 public:
+    PropietarioxMascota();
     PropietarioxMascota(Propietario propietario, Mascota mascota);
+    Mascota getMascota();
+    Propietario getPropietario();
 };
 
 

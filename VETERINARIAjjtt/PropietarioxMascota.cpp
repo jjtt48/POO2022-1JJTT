@@ -14,7 +14,7 @@ Mascota PropietarioxMascota::getMascota()
     return this->mascota;
 }
 
-Propietario PropiedadxPropietario::getPropietario()
+Propietario PropietarioxMascota::getPropietario()
 {
     return this->propietario;
 }

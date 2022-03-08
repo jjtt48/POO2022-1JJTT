@@ -21,5 +21,9 @@ public:
     double getId();
     string getEmail();
     double getTelefono();
+    string modNombre(string nombre);
+    double modId(double id);
+    string modEmail(string email);
+    double modTelefono(double telefono);
 };
 #endif

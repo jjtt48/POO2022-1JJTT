@@ -24,3 +24,16 @@ string Propietario::getEmail(){
 double Propietario::getTelefono(){
     return this-> telefono;
 }
+
+string Propietario::modNombre(string nombre){
+    this->nombre = nombre;
+}
+double Propietario::modId(double id){
+    this->id = id;
+}
+string Propietario::modEmail(string email){
+    this->email = email;
+}
+double Propietario::modTelefono(double telefono){
+    this->telefono = telefono;
+}

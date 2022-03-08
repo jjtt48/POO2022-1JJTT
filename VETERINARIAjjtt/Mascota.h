@@ -21,7 +21,15 @@ private:
 public:
     Mascota();
     Mascota(string raza, string tipo, float peso, int edad, string tipoSangre, string nombre, double id, bool status, string fechaD);
-    
+    string getRaza();
+    string getTipo();
+    float getPeso();
+    int getEdad();
+    string getTipoSangre();
+    string getNombre();
+    double getId();
+    bool getStatus();
+    string getFechaD();
 };
 
 #endif

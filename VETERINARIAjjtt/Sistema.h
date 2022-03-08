@@ -12,14 +12,18 @@ using std::vector;
 
 class Sistema{
 private:
-    vector<Propietario> propietarios;
-    vector<Mascota> Mascotas;
-    vector<PropietarioxMascota> PropietariosxMascotas;
+    double buscarID;
+    vector<Propietario> Dueños;
+    vector<Mascota> mascotas;
+    vector<PropietarioxMascota> propietariosxMascotas;
     
 
 public:
     Sistema();
-    void Datos();
-    
+    void entradaDatosPropietario();
+    void entradaDatosMascota();
+    void modPropietario();
+    void erasePropietario();
+    void relacionMscPrp();
 };
 #endif
