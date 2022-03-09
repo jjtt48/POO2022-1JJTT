@@ -30,6 +30,10 @@ public:
     double getId();
     bool getStatus();
     string getFechaD();
+    void mostrarDatos();
+    void modStatus(bool status);
+    void setFechaD(string fechaD);
+    
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include "PropietarioxMascota.h"
 
-
+PropietarioxMascota::PropietarioxMascota(){
+}
 
 PropietarioxMascota::PropietarioxMascota(Propietario propietario, Mascota mascota){
 
@@ -9,12 +10,10 @@ PropietarioxMascota::PropietarioxMascota(Propietario propietario, Mascota mascot
     
 }
 
-Mascota PropietarioxMascota::getMascota()
-{
+Mascota PropietarioxMascota::getMascota(){
     return this->mascota;
 }
 
-Propietario PropietarioxMascota::getPropietario()
-{
+Propietario PropietarioxMascota::getPropietario(){
     return this->propietario;
 }

@@ -1,6 +1,8 @@
 #include "Propietario.h"
 #include <iostream>
+Propietario::Propietario(){
 
+}
 Propietario::Propietario(string nombre, double id, string email, double telefono){
     this-> nombre = nombre;
     this-> id = id;
@@ -25,15 +27,23 @@ double Propietario::getTelefono(){
     return this-> telefono;
 }
 
-string Propietario::modNombre(string nombre){
+void Propietario::modNombre(string nombre){
     this->nombre = nombre;
 }
-double Propietario::modId(double id){
+void Propietario::modId(double id){
     this->id = id;
 }
-string Propietario::modEmail(string email){
+void Propietario::modEmail(string email){
     this->email = email;
 }
-double Propietario::modTelefono(double telefono){
+void Propietario::modTelefono(double telefono){
     this->telefono = telefono;
+}
+
+void Propietario::mostrarDatos(){
+    cout << "El nombre es: " << nombre << "\n";
+    cout << "El id es: " << id << "\n";
+    cout << "El email es: " << email << "\n";
+    cout << "El telefono es: " << telefono << "\n";
+    cout << "\n";
 }
