@@ -38,7 +38,7 @@ void Sistema::entradaDatosMascota(){
     string tipoSangre;
     string nombre;
     double id;
-    bool status;
+    string status = "V";
     string fechaD;
     
     cout <<"Ingrese tipo de mascota: \n" ;
@@ -57,16 +57,19 @@ void Sistema::entradaDatosMascota(){
     cin >> id;
     
     
+    
     Mascota MascotaDefault(raza, tipo, peso, edad, tipoSangre, nombre, id, status, fechaD);
     mascotas.push_back(MascotaDefault);
 
 }
+
 
 void Sistema::modPropietario(){
     cout <<"Ingrse el id del propietario a modificar: \n";
     cin >> buscarID;
     for (int i = 0; i < Duenos.size(); i++){
         if(Duenos[i].getId() == buscarID){
+            
             string nombre;
             double id;
             string email;
@@ -75,39 +78,23 @@ void Sistema::modPropietario(){
             cout <<"Ingrese su nombre: \n" ;
             cin >> nombre;
             Duenos[i].modNombre(nombre);
+            propietariosxMascotas[i].getPropietario().modNombre(nombre);//0
             cout <<"Ingrese su id: \n" ;
             cin >> id;
             Duenos[i].modId(id);
+            propietariosxMascotas[i].getPropietario().modId(id);//0
             cout <<"Ingrese su email: \n" ;
             cin >> email;
             Duenos[i].modEmail(email);
+            propietariosxMascotas[i].getPropietario().modEmail(email); //0
             cout <<"Ingrese su telefono: \n" ;
             cin >> telefono;
-            Duenos[i].modTelefono(telefono);        
+            Duenos[i].modTelefono(telefono);
+            propietariosxMascotas[i].getPropietario().modTelefono(telefono); //0
         }
     }
-    for (int i = 0; i < propietariosxMascotas.size(); i++){
-        if(propietariosxMascotas[i].getPropietario().getId() == buscarID){
-            string nombre;
-            double id;
-            string email;
-            double telefono;
-    
-            cout <<"Ingrese su nombre: \n" ;
-            cin >> nombre;
-            propietariosxMascotas[i].getPropietario().modNombre(nombre);
-            cout <<"Ingrese su id: \n" ;
-            cin >> id;
-            propietariosxMascotas[i].getPropietario().modId(id);
-            cout <<"Ingrese su email: \n" ;
-            cin >> email;
-            propietariosxMascotas[i].getPropietario().modEmail(email);
-            cout <<"Ingrese su telefono: \n" ;
-            cin >> telefono;
-            propietariosxMascotas[i].getPropietario().modTelefono(telefono);        
-        }
-    }    
 }
+
 
 void Sistema::erasePropietario(){
     cout <<"Ingrse el id del propietario a modificar: \n";
@@ -124,14 +111,14 @@ void Sistema::erasePropietario(){
     }
 }
 
-void Sistema::relacionMscPrp(){ // arreglado :)
+void Sistema::relacionMscPrp(){ 
     
     entradaDatosPropietario();
     entradaDatosMascota();
     
     PropietarioxMascota entryDefault(Duenos[Duenos.size()-1], mascotas[mascotas.size()-1]); 
     propietariosxMascotas.push_back(entryDefault);   
-        
+    
 }
 
 void Sistema::mostrarDatosPropietario(){
@@ -166,6 +153,7 @@ void Sistema::propietarioDeMascotas(){
 void Sistema::mascotaDePropietarios(){
     cout <<"Ingrse el id de la mascota a consultar: \n";
     cin >> buscarID;
+    cout << propietariosxMascotas.size();
     for (int i = 0; i < propietariosxMascotas.size(); i++){
         if(propietariosxMascotas[i].getMascota().getId() == buscarID){
             propietariosxMascotas[i].getPropietario().mostrarDatos();
@@ -177,22 +165,21 @@ void Sistema::cambioStatusM(){
     cout <<"Ingrse el id de la mascota a consultar: \n";
     cin >> buscarID;
     string fechaD;
+    cout <<"ingrse fecha de defuncion: \n";
+    cin >> fechaD;
     for (int i = 0; i < propietariosxMascotas.size(); i++){
         if(propietariosxMascotas[i].getMascota().getId() == buscarID){
-            bool change = false;
+            string change = "M";
             propietariosxMascotas[i].getMascota().modStatus(change);
-            cout <<"ingrse fecha de defuncion: \n";
-            cin >> fechaD;
+            
             propietariosxMascotas[i].getMascota().setFechaD(fechaD);
 
         }    
     }
     for (int i = 0; i < mascotas.size(); i++){
         if(mascotas[i].getId() == buscarID){
-            bool change = false;
+            string change = "M";
             mascotas[i].modStatus(change);
-            cout <<"ingrse fecha de defuncion: \n";
-            cin >> fechaD;
             mascotas[i].setFechaD(fechaD);
         }    
     }
@@ -206,7 +193,7 @@ double Sistema::entradaDatosMascotaVersionNueva(){
     string tipoSangre;
     string nombre;
     double id;
-    bool status;
+    string status = "V";
     string fechaD;
     
     cout <<"Ingrese tipo de mascota: \n" ;
@@ -239,7 +226,7 @@ void Sistema::asociarNewM(){
             memoryID += entradaDatosMascotaVersionNueva();
             for (int v = 0; v < mascotas.size(); v++){
                 if(mascotas[v].getId() == memoryID){
-                    PropietarioxMascota entryDefault(Duenos[i], mascotas[v]); 
+                    PropietarioxMascota entryDefault(Duenos[i], mascotas[v]); //0
                     propietariosxMascotas.push_back(entryDefault); 
                 }
             }
@@ -278,7 +265,7 @@ void Sistema::asociarNewP(){
             memoryID += entradaDatosPropietarioVersionNueva();
             for (int v = 0; v < Duenos.size(); v++){
                 if(mascotas[v].getId() == memoryID){
-                    PropietarioxMascota entryDefault(Duenos[v], mascotas[i]); 
+                    PropietarioxMascota entryDefault(Duenos[v], mascotas[i]); //0
                     propietariosxMascotas.push_back(entryDefault); 
                 }
             }

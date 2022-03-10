@@ -15,12 +15,12 @@ private:
     string tipoSangre;
     string nombre;
     double id;
-    bool status;
+    string status;
     string fechaD;
 
 public:
     Mascota();
-    Mascota(string raza, string tipo, float peso, int edad, string tipoSangre, string nombre, double id, bool status, string fechaD);
+    Mascota(string raza, string tipo, float peso, int edad, string tipoSangre, string nombre, double id, string status, string fechaD);
     string getRaza();
     string getTipo();
     float getPeso();
@@ -28,10 +28,10 @@ public:
     string getTipoSangre();
     string getNombre();
     double getId();
-    bool getStatus();
+    string getStatus();
     string getFechaD();
     void mostrarDatos();
-    void modStatus(bool status);
+    void modStatus(string status);
     void setFechaD(string fechaD);
     
 };

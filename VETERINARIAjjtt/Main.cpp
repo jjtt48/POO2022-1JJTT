@@ -30,7 +30,7 @@ void menu(Sistema sistema)
         switch (opc)
         {
         case 1:
-            cout <<"entre :)";
+            
             sistema.relacionMscPrp();
             break;
         case 2:

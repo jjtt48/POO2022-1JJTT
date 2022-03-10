@@ -3,7 +3,7 @@
 Mascota::Mascota(){
 
 }
-Mascota::Mascota(string raza, string tipo, float peso, int edad, string tipoSangre, string nombre, double id, bool status, string fechaD){
+Mascota::Mascota(string raza, string tipo, float peso, int edad, string tipoSangre, string nombre, double id, string status, string fechaD){
     this-> raza = raza;
     this-> tipo = tipo;
     this-> peso = peso;
@@ -44,7 +44,7 @@ double Mascota::getId(){
     return this -> id;
 }
 
-bool Mascota::getStatus(){
+string Mascota::getStatus(){
     return this -> status;
 }
 
@@ -61,13 +61,13 @@ void Mascota::mostrarDatos(){
     cout << "el nombre es: " << nombre << "\n";
     cout << "el id es: " << id << "\n";
     cout << "el status es: " << status << "\n";
-    if (status == false){
+    if (status == "M"){
         cout <<"la fecha de defuncion es :" << fechaD;
     }
     cout << "\n";
 }
 
-void Mascota::modStatus(bool status){
+void Mascota::modStatus(string status){
     this->status = status;
 }
 
