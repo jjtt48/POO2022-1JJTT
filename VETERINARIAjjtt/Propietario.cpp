@@ -3,11 +3,12 @@
 Propietario::Propietario(){
 
 }
-Propietario::Propietario(string nombre, double id, string email, double telefono){
+Propietario::Propietario(string nombre, double id, string email, double telefono, int edad){
     this-> nombre = nombre;
     this-> id = id;
     this-> email = email;
     this-> telefono = telefono;
+    this-> edad = edad;
     
 }
 
@@ -39,11 +40,14 @@ void Propietario::modEmail(string email){
 void Propietario::modTelefono(double telefono){
     this->telefono = telefono;
 }
-
+void Propietario::modEdad(int edad){
+    this->edad= edad;
+}
 void Propietario::mostrarDatos(){
     cout << "El nombre es: " << nombre << "\n";
     cout << "El id es: " << id << "\n";
     cout << "El email es: " << email << "\n";
     cout << "El telefono es: " << telefono << "\n";
+    cout << "la edad es : " << edad << "\n";
     cout << "\n";
 }

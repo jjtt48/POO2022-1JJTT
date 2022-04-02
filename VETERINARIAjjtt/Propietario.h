@@ -13,10 +13,11 @@ private:
     double id;
     string email;
     double telefono;
+    int edad;
 
 public:
     Propietario();
-    Propietario(string nombre, double id, string email, double telefono);
+    Propietario(string nombre, double id, string email, double telefono, int edad );
     string getNombre();
     double getId();
     string getEmail();
@@ -25,6 +26,7 @@ public:
     void modId(double id);
     void modEmail(string email);
     void modTelefono(double telefono);
+    void modEdad(int edad);
     void mostrarDatos();
 };
 #endif

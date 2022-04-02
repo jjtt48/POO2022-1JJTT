@@ -9,12 +9,12 @@ Sistema::Sistema(){
 
 }
 
-void Sistema::entradaDatosPropietario(){
+int Sistema::entradaDatosPropietario(){
     string nombre;
     double id;
     string email;
     double telefono;
-    
+    int edad;
     cout <<"Ingrese su nombre: \n" ;
     cin >> nombre;
     cout <<"Ingrese su id: \n" ;
@@ -23,14 +23,19 @@ void Sistema::entradaDatosPropietario(){
     cin >> email;
     cout <<"Ingrese su telefono: \n" ;
     cin >> telefono;
-
-    Propietario propDefault(nombre, id, email, telefono);
-    
-    Duenos.push_back(propDefault);
-
+    cout <<"Ingrese su edad: \n";
+    cin >> edad;
+    if(edad > 18){
+        
+        Propietario propDefault(nombre, id, email, telefono, edad);
+        Duenos.push_back(propDefault);
+        return 0;
+    }
+    cout<<"debe ser mayor de edad para hacer su registro \n";
+    return 0;
 }
 
-void Sistema::entradaDatosMascota(){
+int Sistema::entradaDatosMascota(){
     string raza;
     string tipo;
     float peso;
@@ -43,6 +48,10 @@ void Sistema::entradaDatosMascota(){
     
     cout <<"Ingrese tipo de mascota: \n" ;
     cin >> tipo;
+    if(tipo != "perro"){
+        cout<<"solo se atienden perros \n";
+        return 0;
+    }
     cout <<"Ingrese raza de su mascota: \n" ;
     cin >> raza;
     cout <<"Ingrese edad de su mascota: \n" ;
@@ -60,7 +69,7 @@ void Sistema::entradaDatosMascota(){
     
     Mascota MascotaDefault(raza, tipo, peso, edad, tipoSangre, nombre, id, status, fechaD);
     mascotas.push_back(MascotaDefault);
-
+    return 0;
 }
 
 
@@ -74,7 +83,7 @@ void Sistema::modPropietario(){
             double id;
             string email;
             double telefono;
-    
+            int edad;   
             cout <<"Ingrese su nombre: \n" ;
             cin >> nombre;
             Duenos[i].modNombre(nombre);
@@ -91,6 +100,10 @@ void Sistema::modPropietario(){
             cin >> telefono;
             Duenos[i].modTelefono(telefono);
             propietariosxMascotas[i].getPropietario().modTelefono(telefono); //0
+            cout <<"Ingrese su edad: \n" ;
+            cin >> edad;
+            Duenos[i].modEdad(edad);
+            propietariosxMascotas[i].getPropietario().modEdad(edad);
         }
     }
 }
@@ -198,6 +211,10 @@ double Sistema::entradaDatosMascotaVersionNueva(){
     
     cout <<"Ingrese tipo de mascota: \n" ;
     cin >> tipo;
+    if(tipo != "perro"){
+        cout<<"solo se atienden perros \n";
+        return 0;
+    }
     cout <<"Ingrese raza de su mascota: \n" ;
     cin >> raza;
     cout <<"Ingrese edad de su mascota: \n" ;
@@ -240,6 +257,7 @@ double Sistema::entradaDatosPropietarioVersionNueva(){
     double id;
     string email;
     double telefono;
+    int edad;
     
     cout <<"Ingrese su nombre: \n" ;
     cin >> nombre;
@@ -249,11 +267,15 @@ double Sistema::entradaDatosPropietarioVersionNueva(){
     cin >> email;
     cout <<"Ingrese su telefono: \n" ;
     cin >> telefono;
-
-    Propietario propDefault(nombre, id, email, telefono);
-    
-    Duenos.push_back(propDefault);
-    return id;
+    cout <<"ingrese su edad: \n";
+    cin >> edad;
+    if(edad > 18){
+        Propietario propDefault(nombre, id, email, telefono, edad);
+        Duenos.push_back(propDefault);
+        return id;
+    }
+    cout << "Debe ser mayor de edad para hacer el registro";
+    return 0;
 }
 
 void Sistema::asociarNewP(){

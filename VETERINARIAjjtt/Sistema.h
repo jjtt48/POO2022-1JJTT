@@ -20,8 +20,8 @@ private:
 
 public:
     Sistema();
-    void entradaDatosPropietario();
-    void entradaDatosMascota();
+    int entradaDatosPropietario();
+    int entradaDatosMascota();
     void modPropietario();
     void erasePropietario();
     void relacionMscPrp();
