@@ -1,0 +1,3 @@
+D:/U semestre 4/Programacion orientada a objetos/POO2022-1JJTT/Parcial 1/cmake-build-debug/CMakeFiles/casino.dir
+D:/U semestre 4/Programacion orientada a objetos/POO2022-1JJTT/Parcial 1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/U semestre 4/Programacion orientada a objetos/POO2022-1JJTT/Parcial 1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
